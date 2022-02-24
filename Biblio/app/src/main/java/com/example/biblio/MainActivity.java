@@ -7,15 +7,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextView mEmail, mUser;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+                    // The user object has basic properties such as display name, email, etc.
+            String displayName = user.getDisplayName();
+            getSupportActionBar().setTitle(displayName);
+
+        }
+
     }
 
     @Override
@@ -26,9 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-        return true;
+        switch (item.getItemId()){
+            case R.id.menu_other:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return true;
+            case R.id.menu_profil:
+                startActivity(new Intent(getApplicationContext(), UpdateProfil.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

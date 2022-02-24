@@ -5,4 +5,8 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title = "logout" />
+    <item android:id="@+id/menu_profil"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title = "mettre à jour le profil" />
 </menu>

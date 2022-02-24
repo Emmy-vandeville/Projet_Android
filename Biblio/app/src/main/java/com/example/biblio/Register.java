@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -18,6 +20,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+
 
 public class Register extends AppCompatActivity {
 
@@ -36,10 +40,10 @@ public class Register extends AppCompatActivity {
         mPassword = findViewById(R.id.mdPRegister);
         mRegisterBtn = findViewById(R.id.buttonRegister);
         mLoginBtn = findViewById(R.id.textView2);
-
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBarRegister);
         progressBar.setVisibility(View.INVISIBLE);
+
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -83,6 +87,7 @@ public class Register extends AppCompatActivity {
                 //   register the user
 
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
@@ -96,6 +101,7 @@ public class Register extends AppCompatActivity {
                     }
                 });
 
+
             }
         });
 
@@ -106,6 +112,7 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
+
 
 
 
