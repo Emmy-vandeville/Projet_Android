@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
 
-    EditText mEmail, mPassword, mUserName;
+    EditText mEmail, mPassword, mPasswordAgain;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -32,8 +32,8 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         mEmail = findViewById(R.id.emailAdressRegister);
-        mPassword = findViewById(R.id.motDePasseRegister);
-        mUserName = findViewById(R.id.userName);
+        mPasswordAgain = findViewById(R.id.motDePasseRegister);
+        mPassword = findViewById(R.id.mdPRegister);
         mRegisterBtn = findViewById(R.id.buttonRegister);
         mLoginBtn = findViewById(R.id.textView2);
 
@@ -51,7 +51,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
-                String user = mUserName.getText().toString().trim();
+                String passwordAgain = mPasswordAgain.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is required");
@@ -63,13 +63,17 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                if(TextUtils.isEmpty(user)){
-                    mUserName.setError("User name is required");
+                if(TextUtils.isEmpty(passwordAgain)){
+                    mPasswordAgain.setError("Re enter Password");
                     return;
                 }
 
                 if(password.length() < 6){
                     mPassword.setError("Le mot de passe doit avoir au moins 6 charactères");
+                    return;
+                }
+                if(!(password.contentEquals(passwordAgain))){
+                    mPasswordAgain.setError("Les mots de passes doivent être identiques");
                     return;
                 }
 
