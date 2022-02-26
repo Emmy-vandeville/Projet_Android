@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        //Ajoutbutton=(FloatingActionButton)findViewById(R.id.ajoutbutton);
+        ajoutButton=(FloatingActionButton)findViewById(R.id.floatingActionButton2);
         ajoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
