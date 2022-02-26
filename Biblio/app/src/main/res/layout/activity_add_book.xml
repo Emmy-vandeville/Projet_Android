@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Add new book"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/book_name_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom livre"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/book_author_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom auteur"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/book_id_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="id livre"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/books_date_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/books_image_url_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="URL de l'image" />
+
+    <Button
+        android:id="@+id/add_book_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add new book" />
+</LinearLayout>
