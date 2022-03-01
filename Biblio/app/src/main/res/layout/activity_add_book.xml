@@ -22,7 +22,7 @@
         android:id="@+id/book_name_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nom livre"
+        android:hint="Nom livre"
         tools:ignore="TouchTargetSizeCheck" />
 
 
@@ -30,7 +30,7 @@
         android:id="@+id/book_author_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nom auteur"
+        android:hint="Nom auteur"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
@@ -38,7 +38,7 @@
         android:id="@+id/book_id_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="id livre"
+        android:hint="id livre"
         tools:ignore="TouchTargetSizeCheck" />
 
 
@@ -46,15 +46,15 @@
         android:id="@+id/books_date_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Date"
+        android:hint="Date"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/books_image_url_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:text="URL de l'image" />
+        android:hint="URL de l'image"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/add_book_btn"

@@ -40,11 +40,17 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
         //get data from firebase
         return new Book[]{
                 new Book(0, "livre 1", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
-                new Book(1, "livre 1", "Auteur 1", "http://via.placeholder.com/300.png", false, ""),
-                new Book(2, "livre 1", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
-                new Book(3, "livre 7", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
-                new Book(4, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
-                new Book(5, "livre 5", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(1, "livre 2", "Auteur 1", "http://via.placeholder.com/300.png", false, ""),
+                new Book(2, "livre 3", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(3, "livre 4", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(4, "livre 5", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "http://via.placeholder.com/300.png", true, "date"),
+                new Book(5, "livre 6", "Auteur 1", "https://us.123rf.com/450wm/dp3010/dp30101401/dp3010140100016/24917468-couverture-de-livre-en-cuir-rouge.jpg?ver=6", true, "date"),
         };
     }
 

@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Cours/Android/Projet2/Projet_Android/Biblio/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Cours/Android/Projet2/Projet_Android/Biblio/app/src/main/res/layout/activity_add_book.xml" value="0.353713768115942" />
+        <entry key="..\:/Cours/Android/Projet2/Projet_Android/Biblio/app/src/main/res/layout/activity_book_details.xml" value="0.353713768115942" />
+        <entry key="..\:/Cours/Android/Projet2/Projet_Android/Biblio/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Cours/Android/Projet2/Projet_Android/Biblio/app/src/main/res/layout/book_item.xml" value="0.353713768115942" />
         <entry key="..\:/Users/Admin/AndroidProjects/MyApplication2/app/src/main/res/drawable/ic_ajout.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidProjects/MyApplication2/app/src/main/res/layout/activity_add_book.xml" value="0.1375" />
         <entry key="..\:/Users/Admin/AndroidProjects/MyApplication2/app/src/main/res/layout/activity_book_details.xml" value="0.1" />

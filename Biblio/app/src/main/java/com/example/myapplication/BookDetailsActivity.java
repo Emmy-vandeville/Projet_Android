@@ -37,7 +37,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         }
 
         Glide.with(getApplicationContext())
-                .load("")
+                .load(book.getImgCouverture())
                 .into(imageView);
 
 
