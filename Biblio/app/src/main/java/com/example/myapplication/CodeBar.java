@@ -11,10 +11,10 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +41,7 @@ public class CodeBar extends AppCompatActivity {
     private String barcodeData;
     ArrayList<HashMap<String,String>> detail;
     private ProgressDialog progressDialog;
+    ImageButton returnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,13 @@ public class CodeBar extends AppCompatActivity {
         barcodeText = findViewById(R.id.barcode_text);
         initialiseDetectorsAndSources();
         detail = new ArrayList<>();
+        returnHome = findViewById(R.id.returnHome);
+        returnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
     }
 
     private class GetDetail extends AsyncTask<Void, Void, Void> {
