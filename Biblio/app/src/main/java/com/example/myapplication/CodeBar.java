@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -30,9 +29,15 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class CodeBar extends AppCompatActivity {
-
+    DatabaseReference ref;
+    Book myData;
     private SurfaceView surfaceView;
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
@@ -42,6 +47,8 @@ public class CodeBar extends AppCompatActivity {
     ArrayList<HashMap<String,String>> detail;
     private ProgressDialog progressDialog;
     ImageButton returnHome;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +78,7 @@ public class CodeBar extends AppCompatActivity {
 
         }
 
+
         @Override
         protected Void doInBackground(Void... voids) {
             return null;
@@ -86,6 +94,8 @@ public class CodeBar extends AppCompatActivity {
         }
 
         protected Void doInBackground(String url, Void... voids) {
+            ref = FirebaseDatabase.getInstance("https://projetandroid-df4f6-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Biblio").child("Livres");
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             Handler handler = new Handler();
             String jsonString = handler.httpServiceCall(url);
             if (jsonString != null) {
@@ -98,6 +108,10 @@ public class CodeBar extends AppCompatActivity {
                         String author = jsonObject1.getString("authors");
                         String img = jsonObject1.getString("smallThumbnail");
                         String book = title + "," + author;
+                        if (ref != null & user != null){
+                            myData = new Book(3,title,author,img,user.getUid());
+                            ref.push().setValue(myData);
+                        }
 
                         HashMap<String, String> detailMap = new HashMap<>();
                         detailMap.put("book :", book);

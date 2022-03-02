@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class BookDetailsActivity extends AppCompatActivity {
 
     Book book;
-    TextView nomAuteur, nomLivre, idLivre, statutLivre;
+    TextView nomAuteur, nomLivre;
     ImageView imageView;
 
     @Override
@@ -36,18 +36,13 @@ public class BookDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book_details);
         nomAuteur = findViewById(R.id.book_author_txt);
         nomLivre = findViewById(R.id.book_name_txt);
-        idLivre = findViewById(R.id.book_id_txt);
-        statutLivre = findViewById(R.id.books_statut_txt);
+        //idLivre = findViewById(R.id.book_id_txt);
         imageView = findViewById(R.id.book_image);
 
         nomAuteur.setText("By " + book.getAuteur());
         nomLivre.setText(book.getNomLivre());
-        idLivre.setText("Livre Id: " + book.getIdLivre());
-        if (book.isStatut()) {
-            statutLivre.setText("preté, il est de retour le " + book.getDate());
-        } else {
-            statutLivre.setText("Disponible");
-        }
+        //idLivre.setText("Livre Id: " + book.getIdLivre());
+
 
         Glide.with(getApplicationContext())
                 .load(book.getImgCouverture())

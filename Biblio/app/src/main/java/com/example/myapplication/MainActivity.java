@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
     protected void onStart() {
         super.onStart();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(ref != null){
+        if(ref != null & user != null){
             listener = this;
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
