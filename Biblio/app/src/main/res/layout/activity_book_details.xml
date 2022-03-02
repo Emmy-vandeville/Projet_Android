@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/book_image"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_width="394dp"
+        android:layout_height="190dp"
         android:layout_margin="10dp"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="ImageContrastCheck,ImageContrastCheck" />
@@ -69,13 +69,5 @@
         android:text="Statut"
         android:textSize="20dp"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btngetbook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:background="@android:color/holo_blue_light"
-        android:text="Get" />
 
 </LinearLayout>

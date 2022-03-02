@@ -10,14 +10,20 @@ public class Book implements Serializable {
     private String imgCouverture;
     private boolean statut;
     private String date;
+    private String id_compte;
 
-    public Book(int idLivre, String nomLivre, String auteur, String imgCouverture, boolean statut, String date) {
+    public Book(int idLivre, String nomLivre, String auteur, String imgCouverture, boolean statut, String date, String id_compte) {
         this.idLivre = idLivre;
         this.nomLivre = nomLivre;
         this.auteur = auteur;
         this.imgCouverture = imgCouverture;
         this.statut = statut;
         this.date = date;
+        this.id_compte = id_compte;
+    }
+
+    public Book(){
+
     }
 
     public int getIdLivre() {

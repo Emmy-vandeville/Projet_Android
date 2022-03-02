@@ -11,14 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 public class Myadapter  extends RecyclerView.Adapter<com.example.myapplication.Myadapter.ViewHolder> {
-        private Book[] listdata;
+        ArrayList<Book> listdata;
         private BookListener listener;
         private Context context;
         //private final OnClickListener mOnClickListener = new MyOnClickListener();
 
         // RecyclerView recyclerView;
-        public Myadapter(Context context, Book[] listdata,BookListener listener)  {
+        public Myadapter(Context context, ArrayList<Book> listdata,BookListener listener)  {
             this.context = context;
             this.listdata = listdata;
             this.listener=listener;
@@ -33,7 +35,7 @@ public class Myadapter  extends RecyclerView.Adapter<com.example.myapplication.M
 
         @Override
         public void onBindViewHolder( ViewHolder holder, int position) {
-            final Book book = listdata[position];
+            final Book book = listdata.get(position);
             holder.textView.setText(book.getNomLivre());
         Glide.with(context)
                 .load(book.getImgCouverture())
@@ -51,10 +53,10 @@ public class Myadapter  extends RecyclerView.Adapter<com.example.myapplication.M
 
         @Override
         public int getItemCount() {
-            return listdata.length;
+            return listdata.size();
         }
 
-        public static class ViewHolder extends RecyclerView.ViewHolder {
+        class ViewHolder extends RecyclerView.ViewHolder {
             public ImageView imageView;
             public TextView textView;
             public ViewHolder(View itemView) {
