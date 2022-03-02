@@ -73,6 +73,14 @@ public class Book implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getId_compte() {
+        return id_compte;
+    }
+
+    public void setId_compte(String id_compte) {
+        this.id_compte = id_compte;
+    }
 }
 
 

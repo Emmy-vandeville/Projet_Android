@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
     @Override
     protected void onStart() {
         super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(ref != null){
             listener = this;
             ref.addValueEventListener(new ValueEventListener() {
@@ -68,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
                     if (dataSnapshot.exists()){
                         myListData = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren() ){
-                            myListData.add(ds.getValue(Book.class));
+                            if(ds.getValue(Book.class).getId_compte().equals(user.getUid())){
+                                myListData.add(ds.getValue(Book.class));
+                            }
+
                         }
                         Myadapter adapterClass = new Myadapter(getApplicationContext(), myListData, listener);
                         recyclerView.setAdapter(adapterClass);
