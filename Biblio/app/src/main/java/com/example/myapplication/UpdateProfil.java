@@ -125,6 +125,10 @@ public class UpdateProfil extends AppCompatActivity {
                     mEmailCurrent.setError("L'utiisateur n'existe pas " );
                     return;
                 }
+                if (passworda.equals(password)){
+                    mPasswordNew.setError("Le mot de passe doit être différent de l'ancien");
+                    return;
+                }
 
                 AuthCredential credential = EmailAuthProvider.getCredential(emaila, passworda); // Current Login Credentials \\
                 // Prompt the user to re-provide their sign-in credentials

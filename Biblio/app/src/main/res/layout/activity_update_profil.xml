@@ -16,121 +16,156 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/userNameUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="40dp"
-                android:ems="10"
-                android:hint="newUserName"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/buttonUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:text="Mettre à jour le nom d'utilisateur" />
+                <EditText
+                    android:id="@+id/userNameUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:ems="10"
+                    android:hint="newUserName"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.542"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/mailCurrent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="mail actuel"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <Button
+                    android:id="@+id/buttonUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Mettre à jour le nom d'utilisateur"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameUpdate" />
 
-            <EditText
-                android:id="@+id/actuelMdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="mot de passe"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <EditText
+                    android:id="@+id/mailCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:ems="10"
+                    android:hint="mail actuel"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonUpdate" />
 
-            <EditText
-                android:id="@+id/modifierEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="nouvel email"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <EditText
+                    android:id="@+id/actuelMdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="mot de passe"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mailCurrent" />
 
-            <Button
-                android:id="@+id/buttonChangerEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="24dp"
-                android:text="Changer l'email" />
+                <EditText
+                    android:id="@+id/modifierEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="nouvel email"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/actuelMdp" />
 
-            <EditText
-                android:id="@+id/ancienMdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="Ancien Mot de passe"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <Button
+                    android:id="@+id/buttonChangerEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Changer l'email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/modifierEmail" />
 
-            <EditText
-                android:id="@+id/mailActuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="Adresse Mail"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <EditText
+                    android:id="@+id/ancienMdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:ems="10"
+                    android:hint="Ancien Mot de passe"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonChangerEmail" />
 
-            <EditText
-                android:id="@+id/nouveauMdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:hint="nouveau mot de passe"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:textColor="#B2EBF2"
-                android:textColorHint="#B2EBF2" />
+                <EditText
+                    android:id="@+id/mailActuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Adresse Mail"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ancienMdp" />
 
-            <Button
-                android:id="@+id/buttonChangerMdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="85dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="40dp"
-                android:text="Changer le mot de passe" />
+                <EditText
+                    android:id="@+id/nouveauMdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="nouveau mot de passe"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColor="#B2EBF2"
+                    android:textColorHint="#B2EBF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mailActuel" />
+
+                <Button
+                    android:id="@+id/buttonChangerMdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="28dp"
+                    android:text="Changer le mot de passe"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nouveauMdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
