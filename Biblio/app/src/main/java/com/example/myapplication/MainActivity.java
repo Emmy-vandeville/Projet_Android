@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
         ajoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), CodeBar.class));
             }
         });
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
