@@ -7,11 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,12 +46,15 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
                 startActivity(intent);
             }
         });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // The user object has basic properties such as display name, email, etc.
+            String displayName = user.getDisplayName();
+            getSupportActionBar().setTitle(displayName);
+
+        }
 
 
-        /*Myadapter adapter = new Myadapter(getApplicationContext(), myListData, this);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        recyclerView.setAdapter(adapter);*/
     }
 
     @Override
@@ -108,6 +115,29 @@ public class MainActivity extends AppCompatActivity implements Myadapter.BookLis
         bundle.putSerializable("book", book);
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menu_other:
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(this, Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.menu_profil:
+                startActivity(new Intent(getApplicationContext(), UpdateProfil.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
